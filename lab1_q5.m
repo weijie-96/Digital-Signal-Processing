@@ -9,14 +9,12 @@ subplot(2,1,1);
 plot(m,d','r-',m,s,'g--',m,x,'b-.');
 xlabel('Time index n');ylabel('Amplitude');
 legend('d[n] ','s[n] ','x[n] ');
-x1 = x(m);
-x2 = x(m);
-x3 = x(m);
-% x1 = x(m); % Fill in the blank in these 3 lines
-% x2 = x(0:R);
-% x3 = x(0:R+1);
-% y = (x1 + x2 + x3)/3;
-gy = x;
+
+x1 = [0 0 x]; % Fill in the blank in these 3 lines
+x2 = [0 x 0];
+x3 = [x 0 0];
+
+y = (x1 + x2 + x3)/3;
 subplot(2,1,2);
 plot(m,y(2:R+1),'r-',m,s,'g--');
 legend( 'y[n] ','s[n] ');
